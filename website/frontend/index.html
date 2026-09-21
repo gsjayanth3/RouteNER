@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>NER Smart Logistics</title>
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div>
+            <h1>NER Smart Logistics</h1>
+            <p>
+                AI-Based Smart Logistics & Accessibility Intelligence Platform
+            </p>
+        </div>
+
+        <div class="status">
+            ● GIS ONLINE
+        </div>
+    </header>
+
+
+    <!-- Main application -->
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>GIS CONTROL PANEL</h2>
+
+            <div class="panel">
+
+                <h3>Region</h3>
+
+                <p>
+                    <strong>North Eastern Region</strong>
+                </p>
+
+                <p>
+                    8 States
+                </p>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h3>Map Layers</h3>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="stateLayer"
+                        checked
+                    >
+                    State / Capital Markers
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="roadLayer"
+                        checked
+                    >
+                    Road Network
+                </label>
+
+                <label>
+    <input
+        type="checkbox"
+        id="hazardToggle"
+        checked
+    >
+    Hazard Zones
+</label>
+                <label>
+    <input
+        type="checkbox"
+        id="hazardToggle"
+        checked
+    >
+    Hazard Zones
+</label>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h3>Selected Location</h3>
+
+                <div id="locationInfo">
+                    Click a marker on the map.
+                </div>
+
+            </div>
+
+            <!-- ROUTE PLANNER -->
+
+<div class="panel">
+
+    <h3>Route Planner</h3>
+
+    <label for="sourceSelect">
+        Source
+    </label>
+
+    <select id="sourceSelect">
+
+        <option value="">
+            Select source
+        </option>
+
+        <option value="26.1433,91.7898">
+            Guwahati / Dispur
+        </option>
+
+        <option value="25.5788,91.8933">
+            Shillong
+        </option>
+
+        <option value="27.0844,93.6053">
+            Itanagar
+        </option>
+
+        <option value="24.8170,93.9368">
+            Imphal
+        </option>
+
+        <option value="25.6751,94.1086">
+            Kohima
+        </option>
+
+        <option value="23.7271,92.7176">
+            Aizawl
+        </option>
+
+        <option value="23.8315,91.2868">
+            Agartala
+        </option>
+
+        <option value="27.3389,88.6065">
+            Gangtok
+        </option>
+
+    </select>
+
+
+    <label for="destinationSelect">
+        Destination
+    </label>
+
+    <select id="destinationSelect">
+
+        <option value="">
+            Select destination
+        </option>
+
+        <option value="26.1433,91.7898">
+            Guwahati / Dispur
+        </option>
+
+        <option value="25.5788,91.8933">
+            Shillong
+        </option>
+
+        <option value="27.0844,93.6053">
+            Itanagar
+        </option>
+
+        <option value="24.8170,93.9368">
+            Imphal
+        </option>
+
+        <option value="25.6751,94.1086">
+            Kohima
+        </option>
+
+        <option value="23.7271,92.7176">
+            Aizawl
+        </option>
+
+        <option value="23.8315,91.2868">
+            Agartala
+        </option>
+
+        <option value="27.3389,88.6065">
+            Gangtok
+        </option>
+
+    </select>
+
+
+    <button id="routeButton">
+        Calculate Route
+    </button>
+
+</div>
+
+
+<!-- ROUTE INFORMATION -->
+
+<div class="panel">
+
+    <h3>Route Information</h3>
+
+    <div id="routeInfo">
+        Select source and destination.
+    </div>
+
+</div>
+
+<!-- GPS TRACKING -->
+
+<div class="panel">
+
+    <h3>GPS Tracking</h3>
+
+    <button id="startGpsButton">
+        Start GPS Tracking
+    </button>
+
+    <button id="stopGpsButton">
+        Stop GPS Tracking
+    </button>
+
+</div>
+
+
+<!-- GPS INFORMATION -->
+
+<div class="panel">
+
+    <h3>Vehicle Location</h3>
+
+    <div id="gpsInfo">
+
+        GPS not started.
+
+    </div>
+
+</div>
+<!-- RISK ANALYSIS -->
+
+<div class="panel">
+
+    <h3>Risk Analysis</h3>
+
+    <div id="riskInfo">
+
+        Select a hazard zone to view risk.
+
+    </div>
+
+</div>
+
+<div class="panel">
+    <h3>AI Route Risk Analysis</h3>
+    <div id="aiRouteRiskInfo">
+        Calculate a route to view AI risk analysis.
+    </div>
+</div>
+
+
+            <div class="panel stage">
+
+                <h3>Project Stage</h3>
+
+                <p>Stage 1</p>
+
+                <span>
+                    GIS Foundation
+                </span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Map -->
+        <main id="map"></main>
+
+    </div>
+
+
+    <!-- Leaflet JavaScript -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- Our JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

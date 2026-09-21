@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Assam Flood Risk Zone",
+        "hazard": "Flood",
+        "risk": "High",
+        "score": 85
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.8, 26.2],
+            [92.0, 26.2],
+            [92.0, 27.0],
+            [90.8, 27.0],
+            [90.8, 26.2]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Meghalaya Landslide Zone",
+        "hazard": "Landslide",
+        "risk": "High",
+        "score": 90
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [90.9, 25.1],
+            [92.0, 25.1],
+            [92.0, 25.9],
+            [90.9, 25.9],
+            [90.9, 25.1]
+          ]
+        ]
+      }
+    }
+  ]
+}
